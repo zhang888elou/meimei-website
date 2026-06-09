@@ -15,7 +15,7 @@ export function WishCard({ wish }: WishCardProps) {
   return (
     <article className="wish-card">
       <div className="wish-card__image-wrap">
-        <img className="wish-card__image" src={wish.imageUrl} alt={wish.imageAlt} loading="lazy" />
+        <img className="wish-card__image" src={wish.imageUrl} alt={wish.imageAlt} decoding="async" />
         <span className="wish-card__ribbon" aria-hidden="true" />
       </div>
       <div className="wish-card__body">

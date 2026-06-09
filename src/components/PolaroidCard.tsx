@@ -15,7 +15,7 @@ export function PolaroidCard({ item, variant = 'default', tilt = 'none' }: Polar
   return (
     <article className={`polaroid polaroid--${variant} polaroid--tilt-${tilt}`}>
       <div className="polaroid__image-frame">
-        <img className="polaroid__image" src={item.imageUrl} alt={item.imageAlt} loading="lazy" />
+        <img className="polaroid__image" src={item.imageUrl} alt={item.imageAlt} decoding="async" />
         <span className="polaroid__tape" aria-hidden="true" />
       </div>
       <div className="polaroid__content">

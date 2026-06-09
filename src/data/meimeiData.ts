@@ -1,6 +1,8 @@
 import type { MeimeiData } from '../types'
 
-const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`
+const imageVersion = '20260609-photo-fix'
+
+const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}?v=${imageVersion}`
 
 export const meimeiData: MeimeiData = {
   hero: {
