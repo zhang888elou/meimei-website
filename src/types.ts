@@ -9,6 +9,7 @@ export interface HeroContent {
   title: string
   subtitle: string
   imageUrl: string
+  thumbnailUrl: string
   imageAlt: string
 }
 
@@ -17,6 +18,7 @@ export interface CategoryEntry {
   title: string
   subtitle: string
   imageUrl: string
+  thumbnailUrl: string
   imageAlt: string
   accent: string
 }
@@ -29,6 +31,7 @@ export interface BaseVisualItem {
   tags: string[]
   note: string
   imageUrl: string
+  thumbnailUrl: string
   imageAlt: string
 }
 
@@ -46,6 +49,7 @@ export interface WishItem {
   type: WishType
   status: WishStatus
   imageUrl: string
+  thumbnailUrl: string
   imageAlt: string
   description: string
   reason: string

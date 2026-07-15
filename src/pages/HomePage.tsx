@@ -39,7 +39,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <main className="page page--home">
       <SparkleWrapper className="garden-hero">
-        <img className="garden-hero__image" src={meimeiData.hero.imageUrl} alt={meimeiData.hero.imageAlt} />
+        <img
+          className="garden-hero__image"
+          src={meimeiData.hero.thumbnailUrl}
+          alt={meimeiData.hero.imageAlt}
+          loading="eager"
+          decoding="async"
+        />
         <div className="garden-hero__content">
           <p>{meimeiData.hero.eyebrow}</p>
           <h1>{meimeiData.hero.title}</h1>
@@ -72,7 +78,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
         <div className="memory-collage">
           {recentRecords.map((item, index) => (
-            <PolaroidCard key={item.id} item={item} tilt={index % 2 === 0 ? 'left' : 'right'} />
+            <PolaroidCard
+              key={item.id}
+              item={item}
+              tilt={index % 2 === 0 ? 'left' : 'right'}
+              imageLoading={index < 2 ? 'eager' : 'lazy'}
+            />
           ))}
         </div>
       </section>
@@ -89,7 +100,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
         <div className="home-wish-list">
           {meimeiData.wishes.slice(0, 2).map((wish) => (
-            <WishCard key={wish.id} wish={wish} />
+            <WishCard key={wish.id} wish={wish} imageLoading="lazy" />
           ))}
         </div>
       </section>

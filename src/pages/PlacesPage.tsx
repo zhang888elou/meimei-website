@@ -3,6 +3,7 @@ import { meimeiData } from '../data/meimeiData'
 
 export function PlacesPage() {
   const [featuredPlace, ...otherPlaces] = meimeiData.places
+  const priorityPlaceIds = new Set(meimeiData.places.slice(0, 4).map((item) => item.id))
 
   return (
     <main className="page">
@@ -14,13 +15,18 @@ export function PlacesPage() {
 
       {featuredPlace ? (
         <section className="featured-place" aria-label="本页精选地点">
-          <PolaroidCard item={featuredPlace} variant="wide" tilt="none" />
+          <PolaroidCard item={featuredPlace} variant="wide" tilt="none" imageLoading="eager" />
         </section>
       ) : null}
 
       <div className="places-grid">
         {otherPlaces.map((item, index) => (
-          <PolaroidCard key={item.id} item={item} tilt={index % 2 === 0 ? 'right' : 'left'} />
+          <PolaroidCard
+            key={item.id}
+            item={item}
+            tilt={index % 2 === 0 ? 'right' : 'left'}
+            imageLoading={priorityPlaceIds.has(item.id) ? 'eager' : 'lazy'}
+          />
         ))}
       </div>
     </main>

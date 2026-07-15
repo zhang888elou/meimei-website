@@ -5,17 +5,24 @@ interface PolaroidCardProps {
   item: BaseVisualItem | FavoriteItem
   variant?: 'default' | 'showcase' | 'wide'
   tilt?: 'left' | 'right' | 'none'
+  imageLoading?: 'eager' | 'lazy'
 }
 
 function hasBrand(item: BaseVisualItem | FavoriteItem): item is FavoriteItem {
   return 'brand' in item
 }
 
-export function PolaroidCard({ item, variant = 'default', tilt = 'none' }: PolaroidCardProps) {
+export function PolaroidCard({ item, variant = 'default', tilt = 'none', imageLoading = 'lazy' }: PolaroidCardProps) {
   return (
     <article className={`polaroid polaroid--${variant} polaroid--tilt-${tilt}`}>
       <div className="polaroid__image-frame">
-        <img className="polaroid__image" src={item.imageUrl} alt={item.imageAlt} decoding="async" />
+        <img
+          className="polaroid__image"
+          src={item.thumbnailUrl}
+          alt={item.imageAlt}
+          loading={imageLoading}
+          decoding="async"
+        />
         <span className="polaroid__tape" aria-hidden="true" />
       </div>
       <div className="polaroid__content">

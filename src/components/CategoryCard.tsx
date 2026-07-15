@@ -12,7 +12,7 @@ export function CategoryCard({ category, onSelect }: CategoryCardProps) {
       className={`category-card category-card--${category.accent}`}
       onClick={() => onSelect(category.key)}
     >
-      <img className="category-card__image" src={category.imageUrl} alt={category.imageAlt} />
+      <img className="category-card__image" src={category.thumbnailUrl} alt={category.imageAlt} loading="eager" />
       <span className="category-card__glow" aria-hidden="true" />
       <span className="category-card__title">{category.title}</span>
       <span className="category-card__subtitle">{category.subtitle}</span>

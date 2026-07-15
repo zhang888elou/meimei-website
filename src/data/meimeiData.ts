@@ -1,8 +1,10 @@
 import type { MeimeiData } from '../types'
 
-const imageVersion = '20260609-photo-fix'
+const imageVersion = '20260715-thumbs'
 
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}?v=${imageVersion}`
+
+const thumbnailPath = (path: string) => assetPath(path.replace('assets/images/', 'assets/images/thumbs/'))
 
 export const meimeiData: MeimeiData = {
   hero: {
@@ -10,6 +12,7 @@ export const meimeiData: MeimeiData = {
     title: '咩咩私人花园',
     subtitle: '把咩咩爱吃的、想去的、喜欢的和小愿望，都认真收藏在这里。',
     imageUrl: assetPath('assets/images/hero/private-garden.jpg'),
+    thumbnailUrl: thumbnailPath('assets/images/hero/private-garden.jpg'),
     imageAlt: '开满粉色花朵的私人花园',
   },
   categories: [
@@ -18,6 +21,7 @@ export const meimeiData: MeimeiData = {
       title: '爱吃',
       subtitle: '甜品、漂亮饭和约会餐厅',
       imageUrl: assetPath('assets/images/food/strawberry-cake.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/strawberry-cake.jpg'),
       imageAlt: '草莓蛋糕和精致甜点',
       accent: 'rose',
     },
@@ -26,6 +30,7 @@ export const meimeiData: MeimeiData = {
       title: '想去',
       subtitle: '雪景、欧洲和浪漫约会',
       imageUrl: assetPath('assets/images/places/castle-garden.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/castle-garden.jpg'),
       imageAlt: '浪漫城堡花园',
       accent: 'lavender',
     },
@@ -34,6 +39,7 @@ export const meimeiData: MeimeiData = {
       title: '喜欢',
       subtitle: '包包、首饰、香水和小裙子',
       imageUrl: assetPath('assets/images/favorites/coach-tabby-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/coach-tabby-style.jpg'),
       imageAlt: '精致手袋摆拍',
       accent: 'gold',
     },
@@ -42,6 +48,7 @@ export const meimeiData: MeimeiData = {
       title: '愿望',
       subtitle: '想吃、想去、想买、想体验',
       imageUrl: assetPath('assets/images/favorites/blind-box.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/blind-box.jpg'),
       imageAlt: '包装精致的礼物盒',
       accent: 'pearl',
     },
@@ -55,6 +62,7 @@ export const meimeiData: MeimeiData = {
       tags: ['芝士', '焦香', '约会甜点'],
       note: '适合下午给咩咩点一块，再配一杯热拿铁。',
       imageUrl: assetPath('assets/images/food/basque-cheesecake.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/basque-cheesecake.jpg'),
       imageAlt: '一块芝士蛋糕甜点',
     },
     {
@@ -65,6 +73,7 @@ export const meimeiData: MeimeiData = {
       tags: ['酥皮', '黄油香', '早餐'],
       note: '如果可颂边边很酥，咩咩应该会很开心。',
       imageUrl: assetPath('assets/images/food/croissant.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/croissant.jpg'),
       imageAlt: '新鲜出炉的可颂面包',
     },
     {
@@ -75,6 +84,7 @@ export const meimeiData: MeimeiData = {
       tags: ['咸香', '有嚼劲', '面包'],
       note: '可以给咩咩找一家摆盘漂亮的面包店。',
       imageUrl: assetPath('assets/images/food/pretzel-bread.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/pretzel-bread.jpg'),
       imageAlt: '木桌上的手工面包',
     },
     {
@@ -85,6 +95,7 @@ export const meimeiData: MeimeiData = {
       tags: ['热乎', '主食', '浓郁'],
       note: '要记得给咩咩选不太辣、但香味够的那种。',
       imageUrl: assetPath('assets/images/food/curry-rice.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/curry-rice.jpg'),
       imageAlt: '一份浓郁咖喱饭',
     },
     {
@@ -95,6 +106,7 @@ export const meimeiData: MeimeiData = {
       tags: ['日式', '漂亮饭', '摆盘'],
       note: '重点不是吃饱，是让咩咩觉得这顿饭很有仪式感。',
       imageUrl: assetPath('assets/images/food/japanese-rice.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/japanese-rice.jpg'),
       imageAlt: '摆盘精致的日式餐食',
     },
     {
@@ -105,6 +117,7 @@ export const meimeiData: MeimeiData = {
       tags: ['烧鸟', '夜晚', '聊天'],
       note: '适合安排成不用赶时间的小约会。',
       imageUrl: assetPath('assets/images/food/yakitori.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/yakitori.jpg'),
       imageAlt: '烤串和夜晚餐桌',
     },
     {
@@ -115,6 +128,7 @@ export const meimeiData: MeimeiData = {
       tags: ['下午茶', '法式', '精致'],
       note: '要选采光好、桌布好看的位置。',
       imageUrl: assetPath('assets/images/food/french-tea.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/french-tea.jpg'),
       imageAlt: '精致法式甜点和下午茶',
     },
     {
@@ -125,6 +139,7 @@ export const meimeiData: MeimeiData = {
       tags: ['brunch', '漂亮饭', '轻松'],
       note: '适合周末把咩咩哄出门晒太阳。',
       imageUrl: assetPath('assets/images/food/brunch.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/brunch.jpg'),
       imageAlt: '餐桌上的精致早午餐',
     },
     {
@@ -135,6 +150,7 @@ export const meimeiData: MeimeiData = {
       tags: ['草莓', '蛋糕', '粉色'],
       note: '生日、纪念日、普通想哄她的日子都适合。',
       imageUrl: assetPath('assets/images/food/strawberry-cake.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/strawberry-cake.jpg'),
       imageAlt: '草莓奶油蛋糕',
     },
     {
@@ -145,6 +161,7 @@ export const meimeiData: MeimeiData = {
       tags: ['西餐', '氛围感', '约会'],
       note: '提前订位，最好能坐在安静一点的位置。',
       imageUrl: assetPath('assets/images/food/western-dinner.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/western-dinner.jpg'),
       imageAlt: '餐厅里的精致西餐',
     },
     {
@@ -155,6 +172,7 @@ export const meimeiData: MeimeiData = {
       tags: ['韩式', '甜品店', '可爱'],
       note: '要找甜品和店面都漂亮的那种。',
       imageUrl: assetPath('assets/images/food/korean-dessert.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/korean-dessert.jpg'),
       imageAlt: '精致甜品和奶油装饰',
     },
     {
@@ -165,6 +183,7 @@ export const meimeiData: MeimeiData = {
       tags: ['咖啡店', '日式', '安静'],
       note: '可以作为逛街中途的休息点。',
       imageUrl: assetPath('assets/images/food/japanese-cafe.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/japanese-cafe.jpg'),
       imageAlt: '日式风格咖啡店里的咖啡',
     },
     {
@@ -175,6 +194,7 @@ export const meimeiData: MeimeiData = {
       tags: ['花园', '餐厅', '浪漫'],
       note: '适合纪念日前后安排。',
       imageUrl: assetPath('assets/images/food/garden-restaurant.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/garden-restaurant.jpg'),
       imageAlt: '带花园氛围的餐厅座位',
     },
     {
@@ -185,6 +205,7 @@ export const meimeiData: MeimeiData = {
       tags: ['生日', '高级感', '仪式感'],
       note: '咩咩生日必须提前做功课。',
       imageUrl: assetPath('assets/images/food/birthday-restaurant.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/birthday-restaurant.jpg'),
       imageAlt: '高级餐厅里的餐桌氛围',
     },
   ],
@@ -197,6 +218,7 @@ export const meimeiData: MeimeiData = {
       tags: ['雪景', '冬天', '浪漫'],
       note: '要准备好手套、暖宝宝和很多照片。',
       imageUrl: assetPath('assets/images/places/snow-town.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/snow-town.jpg'),
       imageAlt: '被雪覆盖的山间小镇',
     },
     {
@@ -207,6 +229,7 @@ export const meimeiData: MeimeiData = {
       tags: ['欧洲', '街景', '咖啡'],
       note: '想牵着咩咩走很久，不赶路。',
       imageUrl: assetPath('assets/images/places/europe-street.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/europe-street.jpg'),
       imageAlt: '欧洲城市街角和经典建筑',
     },
     {
@@ -217,6 +240,7 @@ export const meimeiData: MeimeiData = {
       tags: ['城堡', '花园', '童话'],
       note: '这类地方适合穿漂亮小裙子去。',
       imageUrl: assetPath('assets/images/places/castle-garden.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/castle-garden.jpg'),
       imageAlt: '带有城堡感的建筑和花园',
     },
     {
@@ -227,6 +251,7 @@ export const meimeiData: MeimeiData = {
       tags: ['酒店', '下午茶', '高级感'],
       note: '要选能坐久一点、光线好一点的地方。',
       imageUrl: assetPath('assets/images/places/hotel-tea.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/hotel-tea.jpg'),
       imageAlt: '高级餐厅和酒店氛围座位',
     },
     {
@@ -237,6 +262,7 @@ export const meimeiData: MeimeiData = {
       tags: ['海边', '落日', '散步'],
       note: '带外套，落日之后会冷。',
       imageUrl: assetPath('assets/images/places/seaside-sunset.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/seaside-sunset.jpg'),
       imageAlt: '海边沙滩和蓝色海水',
     },
     {
@@ -247,6 +273,7 @@ export const meimeiData: MeimeiData = {
       tags: ['花店', '街区', '拍照'],
       note: '不要问她要不要花，直接买一束更好。',
       imageUrl: assetPath('assets/images/places/flower-street.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/flower-street.jpg'),
       imageAlt: '摆满鲜花的花店街区',
     },
     {
@@ -257,6 +284,7 @@ export const meimeiData: MeimeiData = {
       tags: ['美术馆', '看展', '安静'],
       note: '逛完可以接一顿漂亮饭。',
       imageUrl: assetPath('assets/images/places/art-museum.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/art-museum.jpg'),
       imageAlt: '美术馆展厅与艺术作品',
     },
     {
@@ -267,6 +295,7 @@ export const meimeiData: MeimeiData = {
       tags: ['温泉', '雪景', '放松'],
       note: '适合安排成两天一夜的小旅行。',
       imageUrl: assetPath('assets/images/places/snow-onsen.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/snow-onsen.jpg'),
       imageAlt: '雪山和冬日天空',
     },
   ],
@@ -280,6 +309,7 @@ export const meimeiData: MeimeiData = {
       tags: ['包包', '日常', '精致'],
       note: '适合作为第一只认真挑的约会包。',
       imageUrl: assetPath('assets/images/favorites/coach-tabby-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/coach-tabby-style.jpg'),
       imageAlt: '精致浅色手袋摆拍',
     },
     {
@@ -291,6 +321,7 @@ export const meimeiData: MeimeiData = {
       tags: ['优雅', '公主感', '纪念日'],
       note: '不冒充具体官方款，先收藏这个优雅方向。',
       imageUrl: assetPath('assets/images/favorites/lady-dior-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/lady-dior-style.jpg'),
       imageAlt: '优雅女士手袋细节',
     },
     {
@@ -302,6 +333,7 @@ export const meimeiData: MeimeiData = {
       tags: ['链条包', '经典', '高级感'],
       note: '先记下她喜欢的包型和颜色。',
       imageUrl: assetPath('assets/images/favorites/chanel-flap-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/chanel-flap-style.jpg'),
       imageAlt: '带金属链条的精致包包',
     },
     {
@@ -313,6 +345,7 @@ export const meimeiData: MeimeiData = {
       tags: ['腋下包', '简洁', '气质'],
       note: '适合观察咩咩更喜欢老花还是纯色。',
       imageUrl: assetPath('assets/images/favorites/celine-ava-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/celine-ava-style.jpg'),
       imageAlt: '简洁腋下包风格摆拍',
     },
     {
@@ -324,6 +357,7 @@ export const meimeiData: MeimeiData = {
       tags: ['少女感', '软包', '可爱'],
       note: '如果咩咩想要更甜一点的包，可以看这个方向。',
       imageUrl: assetPath('assets/images/favorites/miu-miu-wander-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/miu-miu-wander-style.jpg'),
       imageAlt: '浅色软包风格照片',
     },
     {
@@ -335,6 +369,7 @@ export const meimeiData: MeimeiData = {
       tags: ['小包', '轻便', '经典'],
       note: '不确定款式前，先记录这个轻巧方向。',
       imageUrl: assetPath('assets/images/favorites/lv-pochette-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/lv-pochette-style.jpg'),
       imageAlt: '小号手袋风格照片',
     },
     {
@@ -346,6 +381,7 @@ export const meimeiData: MeimeiData = {
       tags: ['Hobo', '利落', '高级'],
       note: '可以作为成熟一点的包型参考。',
       imageUrl: assetPath('assets/images/favorites/ysl-hobo-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/ysl-hobo-style.jpg'),
       imageAlt: '黑色包包和时装细节',
     },
     {
@@ -357,6 +393,7 @@ export const meimeiData: MeimeiData = {
       tags: ['轻便', '年轻', '日常'],
       note: '如果咩咩喜欢更轻松的包，可以看这个方向。',
       imageUrl: assetPath('assets/images/favorites/prada-re-edition-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/prada-re-edition-style.jpg'),
       imageAlt: '小号手袋和日常搭配',
     },
     {
@@ -368,6 +405,7 @@ export const meimeiData: MeimeiData = {
       tags: ['香水', '温柔', '礼物'],
       note: '送香水前要先试闻，不盲买。',
       imageUrl: assetPath('assets/images/favorites/perfume.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/perfume.jpg'),
       imageAlt: '精致香水瓶',
     },
     {
@@ -379,6 +417,7 @@ export const meimeiData: MeimeiData = {
       tags: ['珍珠', '首饰', '公主感'],
       note: '小颗一点更日常，大颗一点更有仪式感。',
       imageUrl: assetPath('assets/images/favorites/pearl-necklace.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/pearl-necklace.jpg'),
       imageAlt: '珍珠项链和首饰细节',
     },
     {
@@ -390,6 +429,7 @@ export const meimeiData: MeimeiData = {
       tags: ['裙子', '公主风', '拍照'],
       note: '选裙子要看长度、腰线和她穿着舒不舒服。',
       imageUrl: assetPath('assets/images/favorites/princess-dress.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/princess-dress.jpg'),
       imageAlt: '穿着优雅裙装的女生',
     },
     {
@@ -401,6 +441,7 @@ export const meimeiData: MeimeiData = {
       tags: ['盲盒', '惊喜', '可爱'],
       note: '适合当作不需要理由的小礼物。',
       imageUrl: assetPath('assets/images/favorites/blind-box.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/blind-box.jpg'),
       imageAlt: '包装精致的礼物盒',
     },
     {
@@ -412,6 +453,7 @@ export const meimeiData: MeimeiData = {
       tags: ['玩具', '软乎乎', '陪伴'],
       note: '小玩具也要选摸起来舒服、样子可爱的。',
       imageUrl: assetPath('assets/images/favorites/plush-toy.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/plush-toy.jpg'),
       imageAlt: '柔软可爱的玩具',
     },
   ],
@@ -422,6 +464,7 @@ export const meimeiData: MeimeiData = {
       type: '想吃',
       status: '想要',
       imageUrl: assetPath('assets/images/food/french-tea.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/french-tea.jpg'),
       imageAlt: '精致法式甜点和下午茶',
       description: '找一家有花、有蛋糕、有漂亮盘子的下午茶店。',
       reason: '咩咩喜欢漂亮饭，也喜欢有仪式感的甜甜场景。',
@@ -434,6 +477,7 @@ export const meimeiData: MeimeiData = {
       type: '想去',
       status: '安排中',
       imageUrl: assetPath('assets/images/places/snow-town.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/places/snow-town.jpg'),
       imageAlt: '被雪覆盖的山间小镇',
       description: '去一个能看到大片雪景、晚上有暖光的小镇。',
       reason: '雪景很浪漫，也很适合拍咩咩穿厚外套的照片。',
@@ -446,6 +490,7 @@ export const meimeiData: MeimeiData = {
       type: '想买',
       status: '想要',
       imageUrl: assetPath('assets/images/favorites/coach-tabby-style.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/coach-tabby-style.jpg'),
       imageAlt: '精致浅色手袋摆拍',
       description: '先看颜色、尺寸和她平时穿搭适不适合。',
       reason: '这个方向日常、精致，不会太夸张，适合作为认真准备的小礼物。',
@@ -458,6 +503,7 @@ export const meimeiData: MeimeiData = {
       type: '想体验',
       status: '想要',
       imageUrl: assetPath('assets/images/food/garden-restaurant.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/food/garden-restaurant.jpg'),
       imageAlt: '带花园氛围的餐厅座位',
       description: '在有花、有灯、有漂亮餐桌的地方给咩咩过生日。',
       reason: '她会喜欢被认真安排、被认真庆祝的感觉。',
@@ -470,6 +516,7 @@ export const meimeiData: MeimeiData = {
       type: '想买',
       status: '想要',
       imageUrl: assetPath('assets/images/favorites/pearl-necklace.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/pearl-necklace.jpg'),
       imageAlt: '珍珠项链和首饰细节',
       description: '选一条日常也能戴、搭裙子也好看的珍珠项链。',
       reason: '珍珠和咩咩的公主风很搭，也适合作为有纪念意义的小礼物。',
@@ -482,6 +529,7 @@ export const meimeiData: MeimeiData = {
       type: '想体验',
       status: '想要',
       imageUrl: assetPath('assets/images/favorites/princess-dress.jpg'),
+      thumbnailUrl: thumbnailPath('assets/images/favorites/princess-dress.jpg'),
       imageAlt: '穿着优雅裙装的女生',
       description: '准备小裙子、花、柔光和漂亮背景，给咩咩拍一组照片。',
       reason: '她喜欢漂亮小裙子，也值得被认真记录。',

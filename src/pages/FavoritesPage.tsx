@@ -13,6 +13,8 @@ function groupByCategory(items: FavoriteItem[]) {
 }
 
 export function FavoritesPage() {
+  const priorityFavoriteIds = new Set(meimeiData.favorites.slice(0, 4).map((item) => item.id))
+
   return (
     <main className="page">
       <section className="page-intro page-intro--favorites">
@@ -37,6 +39,7 @@ export function FavoritesPage() {
                 item={item}
                 variant="showcase"
                 tilt={index % 3 === 0 ? 'left' : index % 3 === 1 ? 'right' : 'none'}
+                imageLoading={priorityFavoriteIds.has(item.id) ? 'eager' : 'lazy'}
               />
             ))}
           </div>

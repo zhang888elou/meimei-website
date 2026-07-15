@@ -3,6 +3,7 @@ import type { WishItem } from '../types'
 
 interface WishCardProps {
   wish: WishItem
+  imageLoading?: 'eager' | 'lazy'
 }
 
 const statusTone: Record<WishItem['status'], 'rose' | 'gold' | 'lavender'> = {
@@ -11,11 +12,17 @@ const statusTone: Record<WishItem['status'], 'rose' | 'gold' | 'lavender'> = {
   已完成: 'lavender',
 }
 
-export function WishCard({ wish }: WishCardProps) {
+export function WishCard({ wish, imageLoading = 'lazy' }: WishCardProps) {
   return (
     <article className="wish-card">
       <div className="wish-card__image-wrap">
-        <img className="wish-card__image" src={wish.imageUrl} alt={wish.imageAlt} decoding="async" />
+        <img
+          className="wish-card__image"
+          src={wish.thumbnailUrl}
+          alt={wish.imageAlt}
+          loading={imageLoading}
+          decoding="async"
+        />
         <span className="wish-card__ribbon" aria-hidden="true" />
       </div>
       <div className="wish-card__body">

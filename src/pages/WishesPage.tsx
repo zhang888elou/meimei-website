@@ -2,6 +2,8 @@ import { WishCard } from '../components/WishCard'
 import { meimeiData } from '../data/meimeiData'
 
 export function WishesPage() {
+  const priorityWishIds = new Set(meimeiData.wishes.slice(0, 4).map((wish) => wish.id))
+
   return (
     <main className="page">
       <section className="page-intro page-intro--wishes">
@@ -12,7 +14,7 @@ export function WishesPage() {
 
       <div className="wish-list">
         {meimeiData.wishes.map((wish) => (
-          <WishCard key={wish.id} wish={wish} />
+          <WishCard key={wish.id} wish={wish} imageLoading={priorityWishIds.has(wish.id) ? 'eager' : 'lazy'} />
         ))}
       </div>
     </main>

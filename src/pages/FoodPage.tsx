@@ -13,6 +13,8 @@ function groupByCategory(items: FoodItem[]) {
 }
 
 export function FoodPage() {
+  const priorityFoodIds = new Set(meimeiData.food.slice(0, 4).map((item) => item.id))
+
   return (
     <main className="page">
       <section className="page-intro page-intro--food">
@@ -32,7 +34,12 @@ export function FoodPage() {
           </div>
           <div className="masonry-grid">
             {items.map((item, index) => (
-              <PolaroidCard key={item.id} item={item} tilt={index % 2 === 0 ? 'left' : 'right'} />
+              <PolaroidCard
+                key={item.id}
+                item={item}
+                tilt={index % 2 === 0 ? 'left' : 'right'}
+                imageLoading={priorityFoodIds.has(item.id) ? 'eager' : 'lazy'}
+              />
             ))}
           </div>
         </section>
